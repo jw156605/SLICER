@@ -3,6 +3,7 @@ SLICER 0.2.0
 INSTALLATION:
 
 library("devtools")
+
 install_github("jw156605/SLICER")
 
 USAGE:
