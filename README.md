@@ -11,7 +11,7 @@ install_github("jw156605/SLICER")
 ```
 
 ## Sample Data and Code
-A sample dataset containing 300 simulated "cells" each expressing 500 "genes" is included with the SLICER R package. The example below shows how to run SLICER on this sample data. Note that documentation for each function is available from within R.
+A sample dataset containing 500 simulated "cells" each expressing 300 "genes" is included with the SLICER R package. The example below shows how to run SLICER on this sample data. Note that documentation for each function is available from within R.
 
 ```{r,eval=FALSE}
 library(SLICER)
