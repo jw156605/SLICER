@@ -1,4 +1,4 @@
-SLICER 0.2.0
+## SLICER 0.2.0
 
 ## Background
 
