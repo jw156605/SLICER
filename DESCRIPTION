@@ -12,5 +12,7 @@ LazyData: TRUE
 Imports: alphahull, igraph, lle, mgcv
 Depends: igraph, lle, alphahull
 RoxygenNote: 5.0.1
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2016-06-17 13:32:19 UTC; jwelch
+Packaged: 2016-07-07 18:10:44 UTC; jwelch
