@@ -334,7 +334,7 @@ graph_process_distance = function(traj_graph,embedding,start,cell_symbols=16)
 	plotclr <- colorRampPalette(c("black", "red", "yellow"),space="rgb")(50)
 	color_scl = round(col_scl*length(plotclr))
 	color_scl[color_scl == 0] = 1
-	plot(exp_lle[,1],exp_lle[,2],pch=cell_symbols,col=plotclr[color_scl],xlab="Manifold Dim 1",ylab="Manifold Dim 2")
+	plot(embedding[,1],embedding[,2],pch=cell_symbols,col=plotclr[color_scl],xlab="Manifold Dim 1",ylab="Manifold Dim 2")
 	for (i in 1:length(V(traj_graph)))
 	{
 	if (i == start){ i = i + 1 }
@@ -342,7 +342,7 @@ graph_process_distance = function(traj_graph,embedding,start,cell_symbols=16)
 	path_inds = as.numeric(path[[1]])
 	start_inds = path_inds[1:length(path_inds)-1]
 	end_inds = path_inds[2:length(path_inds)]
-	segments(exp_lle[start_inds,1],exp_lle[start_inds,2],exp_lle[end_inds,1],exp_lle[end_inds,2],col=rep("black",length(start_inds)),lwd=1)
+	segments(embedding[start_inds,1],embedding[start_inds,2],embedding[end_inds,1],embedding[end_inds,2],col=rep("black",length(start_inds)),lwd=1)
 	}
 	points(seq(-1,-0.5,length.out=50),rep(-1.5,50),col=plotclr,pch=16,cex=2)
 	#legend("bottomleft",pch=c(23,16,15,17),legend=c("Embryonic Day 14.5","Embryonic Day 16.5","Embryonic Day 18.5","Postnatal Day 107"),pt.bg="Black")
