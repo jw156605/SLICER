@@ -2,7 +2,7 @@
 
 ## Background
 
-SLICER is an algorithm for constructing trajectories that describe gene expression changes during a sequential biological process. SLICER can capture highly nonlinear gene expression changes, automatically select genes related to the process, and detect multiple branch and loop features in the trajectory. Although the algorithm was initially developed specifically for single cell RNA-seq data, SLICER is useful for a wide range of data types including bulk RNA-seq data. 
+SLICER is an algorithm for constructing trajectories that describe gene expression changes during a sequential biological process. SLICER can capture highly nonlinear gene expression changes, automatically select genes related to the process, and detect multiple branch and loop features in the trajectory. 
 
 ##Installation
 ```{r,eval=FALSE}
