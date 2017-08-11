@@ -30,6 +30,6 @@ branches = assign_branches(traj_graph,start)
 
 2. SLICER does not restrict the dimensionality of the low-dimensional projection to 2. We have found that in some cases, particularly when the dataset involves many cell fates, using a more high-dimensional projection can improve results.
 
-3. SLICER was initially developed with single cell RNA-seq in mind, but we have also found that it can give good results when applied to other types of data, including bulk RNA-seq, single cell qPCR data, and 
+3. SLICER was initially developed with single cell RNA-seq in mind, but we have also found that it can give good results when applied to other types of data, including bulk RNA-seq, single cell qPCR data, and single cell epigenomic data.
 
 4. A key assumption of SLICER is that a possibly branching, intrinsically one-dimensional process is the dominant source of variation among samples. It is important to think carefully about whether this assumption is reasonable for any given dataset. 
