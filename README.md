@@ -4,7 +4,7 @@
 
 SLICER is an algorithm for constructing trajectories that describe gene expression changes during a sequential biological process. SLICER can capture highly nonlinear gene expression changes, automatically select genes related to the process, and detect multiple branch and loop features in the trajectory. 
 
-##Installation
+## Installation
 ```{r,eval=FALSE}
 library("devtools")
 install_github("jw156605/SLICER")
