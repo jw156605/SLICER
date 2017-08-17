@@ -5,7 +5,7 @@ Title: Selective Locally Linear Inference of Cellular Expression
 Version: 0.2.0
 Author: Joshua Welch
 Maintainer: Joshua Welch <jwelch@cs.unc.edu>
-Description: This package implements SLICER, and algorithm for inferring cellular trajectories from single cell RNA-
+Description: This package implements SLICER, an algorithm for inferring cellular trajectories from single cell RNA-
     seq data.
 License: GPL-3
 LazyData: TRUE
