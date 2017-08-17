@@ -28,7 +28,5 @@ This function plots the embedding produced by LLE, coloring
 cells by their expression levels of a gene of interest.
 }
 \examples{
-\dontrun{
 graph_gene(traj,traj_lle,1:nrow(traj),1)
-}
 }

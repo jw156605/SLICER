@@ -18,10 +18,8 @@ Sorted vector of cell indices
 Uses the values computed by \code{process_distance} to order cells.
 }
 \examples{
-\dontrun{
 traj_lle = lle(traj[,genes],m=2,k)
 traj_graph = conn_knn_graph(traj_lle,5)
 find_extreme_cells(traj_graph)
 cells_ordered = cell_order(traj_graph,start)
-}
 }

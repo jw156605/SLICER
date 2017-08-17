@@ -19,7 +19,5 @@ the set of cells. Genes selected in this way can then be used
 to construct a trajectory.
 }
 \examples{
-\dontrun{
 genes = select_genes(traj)
-}
 }

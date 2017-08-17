@@ -27,11 +27,9 @@ the number and location of branches in the trajectory.
 Each cell is then assigned to the corresponding branch.
 }
 \examples{
-\dontrun{
 traj_lle = lle(traj[,genes],m=2,k)
 traj_graph = conn_knn_graph(traj_lle,5)
 find_extreme_cells(traj_graph)
 branches = assign_branches(traj_graph,start)
 plot(traj_lle,pch=16,col=branches)
-}
 }

@@ -21,9 +21,7 @@ are chosen based on the longest shortest path through the
 nearest neighbor graph.
 }
 \examples{
-\dontrun{
 traj_lle = lle(traj[,genes],m=2,k)
 traj_graph = conn_knn_graph(traj_lle,5)
 find_extreme_cells(traj_graph)
-}
 }

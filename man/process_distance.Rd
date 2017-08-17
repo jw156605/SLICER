@@ -21,10 +21,8 @@ distance a cell has migrated through the process described by
 the cell trajectory.
 }
 \examples{
-\dontrun{
 traj_lle = lle(traj[,genes],m=2,k)
 traj_graph = conn_knn_graph(traj_lle,5)
 find_extreme_cells(traj_graph)
 dists = process_distance(traj_graph,start)
-}
 }
