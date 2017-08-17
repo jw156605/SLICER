@@ -27,4 +27,3 @@ traj_graph = conn_knn_graph(traj_lle,5)
 find_extreme_cells(traj_graph)
 }
 }
-

@@ -35,4 +35,3 @@ branches = assign_branches(traj_graph,start)
 plot(traj_lle,pch=16,col=branches)
 }
 }
-

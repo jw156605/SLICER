@@ -9,7 +9,7 @@ process_distance(traj_graph, start)
 \arguments{
 \item{traj_graph}{Nearest neighbor graph built from LLE embedding}
 
-\item{k}{Index of starting cell}
+\item{start}{Index of starting cell}
 }
 \value{
 Vector of distances
@@ -28,4 +28,3 @@ find_extreme_cells(traj_graph)
 dists = process_distance(traj_graph,start)
 }
 }
-

@@ -28,4 +28,3 @@ genes = select_genes(traj)
 k = select_k(traj[,genes])
 }
 }
-

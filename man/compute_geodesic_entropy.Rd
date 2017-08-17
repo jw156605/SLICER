@@ -29,4 +29,3 @@ find_extreme_cells(traj_graph)
 compute_geodesic_entropy(traj_graph,start)
 }
 }
-

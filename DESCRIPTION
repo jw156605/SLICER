@@ -9,9 +9,9 @@ Description: This package implements SLICER, an algorithm for inferring cellular
     seq data.
 License: GPL-3
 LazyData: TRUE
-Imports: alphahull, igraph, lle
+Imports: alphahull, igraph, lle, grDevices, graphics, stats
 Depends: R (>= 2.10)
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no

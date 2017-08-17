@@ -30,4 +30,3 @@ find_extreme_cells(traj_graph)
 graph_process_distance(traj_graph,start)
 }
 }
-

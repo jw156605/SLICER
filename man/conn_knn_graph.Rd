@@ -25,4 +25,3 @@ traj_lle = lle(traj[,genes],m=2,k)
 traj_graph = conn_knn_graph(traj_lle,5)
 }
 }
-

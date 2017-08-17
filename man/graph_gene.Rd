@@ -32,4 +32,3 @@ cells by their expression levels of a gene of interest.
 graph_gene(traj,traj_lle,1:nrow(traj),1)
 }
 }
-

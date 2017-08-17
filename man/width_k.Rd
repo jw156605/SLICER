@@ -17,4 +17,3 @@ Width of LLE embedding
 \description{
 Helper function for k selection
 }
-

@@ -1,3 +1,11 @@
+#' @importFrom igraph V shortest_paths distances graph_from_adjacency_matrix clusters count_components get.shortest.paths
+#' @importFrom lle lle
+#' @importFrom alphahull ahull areaahull
+#' @importFrom grDevices colorRampPalette
+#' @importFrom graphics legend lines plot points segments
+#' @importFrom stats dist rnorm var
+NULL
+
 adaptive_knn_graph = function(traj_dist, k)
 {
 	adj_mat = matrix(0,nrow=nrow(traj_dist),ncol=ncol(traj_dist))
@@ -13,9 +21,6 @@ adaptive_knn_graph = function(traj_dist, k)
 #' @param k Nearest neighbors
 #' @param traj_exp Cell expression matrix
 #' @return Width of LLE embedding
-#' @import alphahull
-#' @import lle
-#' @import igraph
 #' @export
 
 width_k = function(k,traj_exp)
@@ -79,7 +84,6 @@ dev_ij = function(i,j,traj_exp,adj_mat)
 	return(sum((traj_exp[i,j] - traj_exp[which(adj_mat[i,] > 0),j])^2))
 }
 
-#' @import stats
 selection_val = function(j,traj_exp,adj_mat)
 {
 	n = nrow(traj_exp)
@@ -88,8 +92,6 @@ selection_val = function(j,traj_exp,adj_mat)
 	return (var(traj_exp[,j])/(sum(dev)/(n*k-1)))
 }
 
-#' @import stats
-#' @import igraph
 min_conn_k = function(traj_exp)
 {
 	traj_dist = as.matrix(dist(traj_exp))
@@ -115,9 +117,6 @@ min_conn_k = function(traj_exp)
 #' @param embedding Low-dimensional LLE embedding of cells
 #' @param k Number of nearest neighbors to use when detecting clusters
 #' @return Vector containing a numerical cluster assignment for each cell
-#' @import igraph
-#' @import graphics
-#' @import stats
 #' @export
 
 detect_cell_types = function(embedding,k)
@@ -139,11 +138,6 @@ detect_cell_types = function(embedding,k)
 #' @param embedding Low-dimensional LLE embedding of cells
 #' @param k Number of nearest neighbors
 #' @return An igraph object corresponding to the k-NN graph
-#' @importFrom igraph graph_from_adjacency_matrix
-#' @importFrom igraph count_components
-#' @importFrom igraph clusters
-#' @importFrom stats rnorm
-#' @importFrom stats dist
 #' @export
 #' @examples
 #' \dontrun{
@@ -203,7 +197,6 @@ return(traj_graph)
 #'
 #' @param embedding Low-dimensional LLE embedding of cells
 #' @return Vector containing indices of selected genes
-#' @import stats
 #' @export
 #' @examples
 #' \dontrun{
@@ -231,7 +224,6 @@ select_genes = function(embedding)
 #' @param traj_graph Nearest neighbor graph built from LLE embedding
 #' @param start Index of starting cell
 #' @return Vector of distances
-#' @import igraph
 #' @export
 #' @examples
 #' \dontrun{
@@ -281,7 +273,6 @@ find_extreme_cells = function(traj_graph,embedding)
 #' @param traj_graph Nearest neighbor graph built from LLE embedding
 #' @param start Index of starting cell
 #' @return Sorted vector of cell indices
-#' @importFrom igraph distances
 #' @export
 #' @examples
 #' \dontrun{
@@ -309,7 +300,6 @@ cell_order = function(traj_graph,start)
 #' @param cell_symbols Symbols to use for plotting each cell
 #' @param title Plot title
 #' @return None
-#' @import graphics
 #' @export
 #' @examples
 #' \dontrun{
@@ -337,9 +327,6 @@ graph_gene = function(exp_mat,embedding,samples,gene_ind,cell_symbols=16,title="
 #' @param start Index of start cell
 #' @param cell_symbols Symbols to use for plotting each cell
 #' @return None
-#' @import grDevices
-#' @import graphics
-#' @import igraph
 #' @export
 #' @examples
 #' \dontrun{
@@ -380,10 +367,6 @@ graph_process_distance = function(traj_graph,embedding,start,cell_symbols=16)
 #' @param start Index of start cell
 #' @return Vector of geodesic entropy values. Item k is the
 #' geodesic entropy k steps away from the start cell.
-#' @importFrom igraph V
-#' @importFrom igraph shortest_paths
-#' @importFrom graphics plot
-#' @importFrom graphics lines
 #' @export
 #' @examples
 #' \dontrun{
@@ -443,9 +426,6 @@ compute_geodesic_entropy = function(traj_graph,start)
 #' to branches (used for recursive calls; not intended to be set
 #' by users).
 #' @return Vector of integers assigning each cell to a branch
-#' @importFrom igraph V
-#' @importFrom igraph shortest_paths
-#' @importFrom igraph distances
 #' @export
 #' @examples
 #' \dontrun{

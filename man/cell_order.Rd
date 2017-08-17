@@ -25,4 +25,3 @@ find_extreme_cells(traj_graph)
 cells_ordered = cell_order(traj_graph,start)
 }
 }
-

@@ -23,4 +23,3 @@ to construct a trajectory.
 genes = select_genes(traj)
 }
 }
-

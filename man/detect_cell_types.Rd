@@ -19,4 +19,3 @@ Vector containing a numerical cluster assignment for each cell
 graph (built from the LLE embedding) into connected
 components. These connected components represent clusters of cells corresponding to putative cell types.
 }
-
