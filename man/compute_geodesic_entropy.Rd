@@ -22,8 +22,10 @@ produces a plot that can be used to visually confirm
 the branches detected by \code{assign_branches}.
 }
 \examples{
-traj_lle = lle(traj[,genes],m=2,k)
+\dontrun{
+traj_lle = lle(traj[,genes],m=2,k)$Y
 traj_graph = conn_knn_graph(traj_lle,5)
-find_extreme_cells(traj_graph)
+start=1
 compute_geodesic_entropy(traj_graph,start)
+}
 }

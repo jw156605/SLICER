@@ -140,7 +140,10 @@ detect_cell_types = function(embedding,k)
 #' @return An igraph object corresponding to the k-NN graph
 #' @export
 #' @examples
-#' traj_lle = lle(traj[,genes],m=2,k)
+#' genes=1:200
+#' cells=sample(1:500,30)
+#' k=10
+#' traj_lle = lle::lle(traj[cells,genes],m=2,k)$Y
 #' traj_graph = conn_knn_graph(traj_lle,5)
 
 conn_knn_graph = function(embedding,k)
@@ -223,9 +226,12 @@ select_genes = function(embedding)
 #' @return Vector of distances
 #' @export
 #' @examples
-#' traj_lle = lle(traj[,genes],m=2,k)
+#' genes=1:200
+#' cells=sample(1:500,30)
+#' k=10
+#' traj_lle = lle::lle(traj[cells,genes],m=2,k)$Y
 #' traj_graph = conn_knn_graph(traj_lle,5)
-#' find_extreme_cells(traj_graph)
+#' start = 1
 #' dists = process_distance(traj_graph,start)
 process_distance = function(traj_graph,start)
 {
@@ -245,9 +251,12 @@ process_distance = function(traj_graph,start)
 #' @return Indices of potential starting cells
 #' @export
 #' @examples
-#' traj_lle = lle(traj[,genes],m=2,k)
+#' genes=1:200
+#' cells=sample(1:500,30)
+#' k=10
+#' traj_lle = lle::lle(traj[cells,genes],m=2,k)$Y
 #' traj_graph = conn_knn_graph(traj_lle,5)
-#' find_extreme_cells(traj_graph)
+#' find_extreme_cells(traj_graph,traj_lle)
 find_extreme_cells = function(traj_graph,embedding)
 {
 	dists = distances(traj_graph)
@@ -268,9 +277,13 @@ find_extreme_cells = function(traj_graph,embedding)
 #' @return Sorted vector of cell indices
 #' @export
 #' @examples
-#' traj_lle = lle(traj[,genes],m=2,k)
+#' genes=1:200
+#' cells=sample(1:500,30)
+#' data(traj)
+#' k=10
+#' traj_lle = lle::lle(traj[cells,genes],m=2,k)$Y
 #' traj_graph = conn_knn_graph(traj_lle,5)
-#' find_extreme_cells(traj_graph)
+#' start=1
 #' cells_ordered = cell_order(traj_graph,start)
 cell_order = function(traj_graph,start)
 {
@@ -293,7 +306,9 @@ cell_order = function(traj_graph,start)
 #' @return None
 #' @export
 #' @examples
+#' \dontrun{
 #' graph_gene(traj,traj_lle,1:nrow(traj),1)
+#' }
 graph_gene = function(exp_mat,embedding,samples,gene_ind,cell_symbols=16,title="Gene Expression")
 {
 	gene_exp = log(exp_mat[gene_ind,samples]+1)
@@ -318,10 +333,13 @@ graph_gene = function(exp_mat,embedding,samples,gene_ind,cell_symbols=16,title="
 #' @return None
 #' @export
 #' @examples
-#' traj_lle = lle(traj[,genes],m=2,k)
+#' genes=1:200
+#' cells=sample(1:500,30)
+#' k=10
+#' traj_lle = lle::lle(traj[cells,genes],m=2,k)$Y
 #' traj_graph = conn_knn_graph(traj_lle,5)
-#' find_extreme_cells(traj_graph)
-#' graph_process_distance(traj_graph,start)
+#' start=1
+#' graph_process_distance(traj_graph,traj_lle,start)
 graph_process_distance = function(traj_graph,embedding,start,cell_symbols=16)
 {
 	geodesic_dists = process_distance(traj_graph,start)
@@ -356,10 +374,12 @@ graph_process_distance = function(traj_graph,embedding,start,cell_symbols=16)
 #' geodesic entropy k steps away from the start cell.
 #' @export
 #' @examples
-#' traj_lle = lle(traj[,genes],m=2,k)
+#' \dontrun{
+#' traj_lle = lle(traj[,genes],m=2,k)$Y
 #' traj_graph = conn_knn_graph(traj_lle,5)
-#' find_extreme_cells(traj_graph)
+#' start=1
 #' compute_geodesic_entropy(traj_graph,start)
+#' }
 compute_geodesic_entropy = function(traj_graph,start)
 {
 	smart_table = function(x,n)
@@ -413,11 +433,13 @@ compute_geodesic_entropy = function(traj_graph,start)
 #' @return Vector of integers assigning each cell to a branch
 #' @export
 #' @examples
-#' traj_lle = lle(traj[,genes],m=2,k)
+#' \dontrun{
+#' traj_lle = lle::lle(traj[,genes],m=2,k)$Y
 #' traj_graph = conn_knn_graph(traj_lle,5)
-#' find_extreme_cells(traj_graph)
+#' start=1
 #' branches = assign_branches(traj_graph,start)
 #' plot(traj_lle,pch=16,col=branches)
+#' }
 
 assign_branches = function(traj_graph,start,min_branch_len=10,cells=V(traj_graph))
 {

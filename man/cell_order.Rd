@@ -18,8 +18,12 @@ Sorted vector of cell indices
 Uses the values computed by \code{process_distance} to order cells.
 }
 \examples{
-traj_lle = lle(traj[,genes],m=2,k)
+genes=1:200
+cells=sample(1:500,30)
+data(traj)
+k=10
+traj_lle = lle::lle(traj[cells,genes],m=2,k)$Y
 traj_graph = conn_knn_graph(traj_lle,5)
-find_extreme_cells(traj_graph)
+start=1
 cells_ordered = cell_order(traj_graph,start)
 }

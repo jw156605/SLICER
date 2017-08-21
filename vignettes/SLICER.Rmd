@@ -3,6 +3,7 @@ title: "SLICER"
 author: "Joshua Welch"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
+self_contained: no
 vignette: >
   %\VignetteIndexEntry{SLICER}
   %\VignetteEngine{knitr::rmarkdown}
@@ -33,4 +34,3 @@ start = 1
 cells_ordered = cell_order(traj_graph, start)
 branches = assign_branches(traj_graph,start)
 ```
-

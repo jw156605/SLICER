@@ -20,6 +20,9 @@ LLE embedding, then adds the minimum number of edges needed to
 make the graph fully connected.
 }
 \examples{
-traj_lle = lle(traj[,genes],m=2,k)
+genes=1:200
+cells=sample(1:500,30)
+k=10
+traj_lle = lle::lle(traj[cells,genes],m=2,k)$Y
 traj_graph = conn_knn_graph(traj_lle,5)
 }

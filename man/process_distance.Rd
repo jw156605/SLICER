@@ -21,8 +21,11 @@ distance a cell has migrated through the process described by
 the cell trajectory.
 }
 \examples{
-traj_lle = lle(traj[,genes],m=2,k)
+genes=1:200
+cells=sample(1:500,30)
+k=10
+traj_lle = lle::lle(traj[cells,genes],m=2,k)$Y
 traj_graph = conn_knn_graph(traj_lle,5)
-find_extreme_cells(traj_graph)
+start = 1
 dists = process_distance(traj_graph,start)
 }

@@ -21,7 +21,10 @@ are chosen based on the longest shortest path through the
 nearest neighbor graph.
 }
 \examples{
-traj_lle = lle(traj[,genes],m=2,k)
+genes=1:200
+cells=sample(1:500,30)
+k=10
+traj_lle = lle::lle(traj[cells,genes],m=2,k)$Y
 traj_graph = conn_knn_graph(traj_lle,5)
-find_extreme_cells(traj_graph)
+find_extreme_cells(traj_graph,traj_lle)
 }
