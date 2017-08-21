@@ -201,7 +201,9 @@ return(traj_graph)
 #' @return Vector containing indices of selected genes
 #' @export
 #' @examples
+#' \dontrun{
 #' genes = select_genes(traj)
+#' }
 select_genes = function(embedding)
 {
 	k = min_conn_k(embedding)

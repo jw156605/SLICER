@@ -1,13 +1,14 @@
 ---
 title: "SLICER"
 author: "Joshua Welch"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-self_contained: no
-vignette: >
-  %\VignetteIndexEntry{SLICER}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+date: '`r Sys.Date()`'
+output:
+  word_document: default
+  pdf_document: default
+  html_document:
+    self_contained: no
+vignette: |
+  %\VignetteIndexEntry{SLICER} %\VignetteEngine{knitr::rmarkdown} %\VignetteEncoding{UTF-8}
 ---
 
 ## Background
