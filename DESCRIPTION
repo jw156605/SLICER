@@ -6,7 +6,7 @@ Version: 0.2.0
 Author: Joshua Welch
 Maintainer: Joshua Welch <jwelch@cs.unc.edu>
 Description: Provides an implementation of SLICER, an algorithm for inferring cellular trajectories from single cell RNA sequencing data. See Welch, JD, Hartemink AJ, Prins JF (2016) <doi:10.1186/s13059-016-0975-3>
-License: GPL-3
+License: ACM Software License Agreement
 LazyData: TRUE
 Imports: alphahull, igraph, lle, grDevices, graphics, stats
 Depends: R (>= 2.10)
