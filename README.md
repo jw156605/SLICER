@@ -10,6 +10,10 @@ library("devtools")
 install_github("jw156605/SLICER")
 ```
 
+Update: SLICER is now on CRAN! So you can install it by simply typing 
+```install.packages("SLICER")
+```
+
 ## Sample Data and Code
 A sample dataset containing 500 simulated "cells" each expressing 300 "genes" is included with the SLICER R package. The example below shows how to run SLICER on this sample data. Note that documentation for each function is available from within R.
 
