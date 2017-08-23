@@ -11,7 +11,8 @@ install_github("jw156605/SLICER")
 ```
 
 Update: SLICER is now on CRAN! So you can install it by simply typing 
-```install.packages("SLICER")
+```{r,eval=FALSE}
+install.packages("SLICER")
 ```
 
 ## Sample Data and Code
