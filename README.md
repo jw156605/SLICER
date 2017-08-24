@@ -40,4 +40,4 @@ branches = assign_branches(traj_graph,start)
 
 4. A key assumption of SLICER is that a possibly branching, intrinsically one-dimensional process is the dominant source of variation among samples. It is important to think carefully about whether this assumption is reasonable for any given dataset. 
 
-[![](http://cranlogs.r-pkg.org/badges/SLICER)](http://cran.rstudio.com/web/packages/SLICER/index.html)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/SLICER)](http://cran.rstudio.com/web/packages/SLICER/index.html)
