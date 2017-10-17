@@ -4,12 +4,14 @@
 \alias{compute_geodesic_entropy}
 \title{Compute the geodesic entropy profile of a trajectory}
 \usage{
-compute_geodesic_entropy(traj_graph, start)
+compute_geodesic_entropy(traj_graph, start, do_plot = TRUE)
 }
 \arguments{
 \item{traj_graph}{Nearest neighbor graph built from LLE embedding}
 
 \item{start}{Index of start cell}
+
+\item{do_plot}{Whether or not to plot results}
 }
 \value{
 Vector of geodesic entropy values. Item k is the

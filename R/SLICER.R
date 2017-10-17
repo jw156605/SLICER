@@ -116,16 +116,19 @@ min_conn_k = function(traj_exp)
 #'
 #' @param embedding Low-dimensional LLE embedding of cells
 #' @param k Number of nearest neighbors to use when detecting clusters
+#' @param do_plot Whether or not to plot results
 #' @return Vector containing a numerical cluster assignment for each cell
 #' @export
 
-detect_cell_types = function(embedding,k)
+detect_cell_types = function(embedding,k,do_plot=TRUE)
 {
   traj_dist = as.matrix(dist(embedding))
   adj_mat = adaptive_knn_graph(traj_dist,rep(k,nrow(embedding)))
   traj_graph = graph_from_adjacency_matrix(adj_mat,mode="undirected",weighted=TRUE)
   cluster_assignments = clusters(traj_graph)$membership
-  plot(embedding[,1],embedding[,2],pch=16,col=cluster_assignments)
+  if (do_plot) {
+    plot(embedding[,1],embedding[,2],pch=16,col=cluster_assignments)
+  }
   return(cluster_assignments)
 }
 
@@ -250,6 +253,7 @@ process_distance = function(traj_graph,start)
 #'
 #' @param traj_graph Nearest neighbor graph built from LLE embedding
 #' @param embedding Low-dimensional LLE embedding of cells
+#' @param do_plot Whether or not to plot results
 #' @return Indices of potential starting cells
 #' @export
 #' @examples
@@ -259,14 +263,16 @@ process_distance = function(traj_graph,start)
 #' traj_lle = lle::lle(traj[cells,genes],m=2,k)$Y
 #' traj_graph = conn_knn_graph(traj_lle,5)
 #' find_extreme_cells(traj_graph,traj_lle)
-find_extreme_cells = function(traj_graph,embedding)
+find_extreme_cells = function(traj_graph,embedding,do_plot=TRUE)
 {
   dists = distances(traj_graph)
   starts = unique(max.col(dists))
-  plot(embedding[,1],embedding[,2],pch=16,xlab="Manifold Dim 1",ylab="Manifold Dim 2")
-  points(embedding[starts[1],1],embedding[starts[1],2],pch=15,col="Red")
-  points(embedding[starts[2],1],embedding[starts[2],2],pch=15,col="Yellow")
-  legend("left",pch=c(15,15),legend=starts,col=c("Red","Yellow"))
+  if (do_plot) {
+    plot(embedding[,1],embedding[,2],pch=16,xlab="Manifold Dim 1",ylab="Manifold Dim 2")
+    points(embedding[starts[1],1],embedding[starts[1],2],pch=15,col="Red")
+    points(embedding[starts[2],1],embedding[starts[2],2],pch=15,col="Yellow")
+    legend("left",pch=c(15,15),legend=starts,col=c("Red","Yellow"))
+  }
   return(starts)
 }
 
@@ -372,6 +378,7 @@ graph_process_distance = function(traj_graph,embedding,start,cell_symbols=16)
 #'
 #' @param traj_graph Nearest neighbor graph built from LLE embedding
 #' @param start Index of start cell
+#' @param do_plot Whether or not to plot results
 #' @return Vector of geodesic entropy values. Item k is the
 #' geodesic entropy k steps away from the start cell.
 #' @export
@@ -382,7 +389,7 @@ graph_process_distance = function(traj_graph,embedding,start,cell_symbols=16)
 #' start=1
 #' compute_geodesic_entropy(traj_graph,start)
 #' }
-compute_geodesic_entropy = function(traj_graph,start)
+compute_geodesic_entropy = function(traj_graph,start,do_plot=TRUE)
 {
   smart_table = function(x,n)
   {
@@ -415,8 +422,10 @@ compute_geodesic_entropy = function(traj_graph,start)
   {
     entropies[i] = entropy_i(vertex_probs,i)
   }
-  plot(1:max_path_length,entropies,type="l",xlab="Steps from Start Cell",ylab="Geodesic Entropy")
-  lines(1:max_path_length,rep(1,max_path_length),lty=2)
+  if (do_plot) {
+    plot(1:max_path_length,entropies,type="l",xlab="Steps from Start Cell",ylab="Geodesic Entropy")
+    lines(1:max_path_length,rep(1,max_path_length),lty=2)
+  }
   return (entropies)
 }
 

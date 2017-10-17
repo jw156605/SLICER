@@ -4,12 +4,14 @@
 \alias{find_extreme_cells}
 \title{Identify candidate start cells for the trajectory}
 \usage{
-find_extreme_cells(traj_graph, embedding)
+find_extreme_cells(traj_graph, embedding, do_plot = TRUE)
 }
 \arguments{
 \item{traj_graph}{Nearest neighbor graph built from LLE embedding}
 
 \item{embedding}{Low-dimensional LLE embedding of cells}
+
+\item{do_plot}{Whether or not to plot results}
 }
 \value{
 Indices of potential starting cells

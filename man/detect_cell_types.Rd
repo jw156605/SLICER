@@ -4,12 +4,14 @@
 \alias{detect_cell_types}
 \title{Identify clusters corresponding to putative cell types}
 \usage{
-detect_cell_types(embedding, k)
+detect_cell_types(embedding, k, do_plot = TRUE)
 }
 \arguments{
 \item{embedding}{Low-dimensional LLE embedding of cells}
 
 \item{k}{Number of nearest neighbors to use when detecting clusters}
+
+\item{do_plot}{Whether or not to plot results}
 }
 \value{
 Vector containing a numerical cluster assignment for each cell
